@@ -1,0 +1,57 @@
+:root {
+    /*
+    bg -> background
+    fg -> foreground
+    br -> border
+    */
+    --nc-bg-light: white;
+    --nc-fg-light: black;
+    /*
+    --nc-br-light: ##888A9C;
+    */
+    --nc-bg-dark: #1e1e1e;
+    --nc-fg-dark: white;
+    /*
+    --nc-br-dark: #888A9C;
+    */
+}
+
+body {
+    width: 280px;
+    height: 280px;
+}
+
+body {
+    background: var(--nc-bg-light);
+    color: var(--nc-fg-light);
+}
+/*
+.colorPicker.pcr-app {
+    outline-style: solid;
+    outline-width: 2px;
+    outline-color: var(--nc-br-light);
+}
+*/
+/* https://github.com/simonwep/pickr/issues/242 */
+.colorPicker .pcr-current-color::before {
+    background-image: none !important;
+}
+
+@media (prefers-color-scheme: dark) 
+{
+    body {
+        background: var(--nc-bg-dark);
+        color: var(--nc-fg-dark);
+    }
+    /* . because this is added via popup.js Pickr.create appClass */
+    .colorPicker.pcr-app {
+        background: var(--nc-bg-dark);
+        /*outline-color: var(--nc-br-dark);*/
+    }
+    .colorPicker.pcr-app .pcr-result {
+        background: color-mix(in hsl, var(--nc-bg-dark) 90%, white 10%);
+    }
+    .colorPicker.pcr-app .pcr-type {
+        background: color-mix(in hsl, var(--nc-bg-dark) 90%, white 10%);
+    }
+}
