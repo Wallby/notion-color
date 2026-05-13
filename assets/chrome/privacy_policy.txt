@@ -1,0 +1,1 @@
+Nothing to declare. The extension functions entirely offline/on the user's machine.
